@@ -1,13 +1,14 @@
 import png
 import random
-
+import os.path
+import shutil
 
 class RandomPNGGenerator(object):
     """generates and saves psuedorandom pngs"""
     
     def generatePNG(self):
-        width = random.randint(1, 400)
-        height = random.randint(1, 400)
+        width = random.randint(1, 1200)
+        height = random.randint(1, 1200)
         pixelArray = [[[0,0,0] for x in range(width)] for y in range(height)]
         for x in range(height):
             for y in range(width):
@@ -24,3 +25,14 @@ class RandomPNGGenerator(object):
          imageObject = png.from_array(pixelArray, 'RGBA')
          imageObject.save(fileName)
          
+    
+    def renderImages(self, fileName, count):
+        outFolder = "pngcoverage-output"
+        if os.path.exists(outFolder):
+            shutil.rmtree(outFolder)
+        os.makedirs(outFolder)
+        for x in range(count):
+            outDir = outFolder + "/" + fileName + str(x) + ".png"
+            print(outDir)
+            self.saveImage(outDir)
+        
