@@ -4,6 +4,7 @@ from .RandomPNGrgba import RandomPNGGeneratorRGBA
 from .RandomPNGl import RandomPNGGeneratorL
 from .RandomPNGla import RandomPNGGeneratorla
 from .RandomPNGrgb import RandomPNGGeneratorRGB
+from .BitDepth import BitDepthGenerator
 
 def main():
     pngGenRGBA = RandomPNGGeneratorRGBA()
@@ -17,6 +18,8 @@ def main():
     pngGenGreyAlpha.renderImages(sys.argv[1], int(sys.argv[2]))
     pngGenRGB = RandomPNGGeneratorRGB()
     pngGenRGB.renderImages(sys.argv[1], int(sys.argv[2]))
+    bitDepths = BitDepthGenerator()
+    bitDepths.renderImages(sys.argv[1], int(sys.argv[2]))
 
 if __name__ == '__main__':
     main()
