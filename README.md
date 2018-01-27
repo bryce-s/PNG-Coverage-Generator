@@ -1,5 +1,5 @@
 # PNG-Coverage-Generator
-Quick scripts for random PNG generation--intended to provide source image files for code coverage.
+Quick object scripts for random PNG generation--intended to provide source image files for code coverage.
 
 # Usage
 ```
